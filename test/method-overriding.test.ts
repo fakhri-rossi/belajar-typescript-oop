@@ -13,7 +13,8 @@ describe("Method Overriding", () => {
 
   class Manager extends Employee {
     sayHello(name: string): void {
-      console.info(`Hello ${name}, my name is ${this.name}, I'm your Manager`);
+      super.sayHello(name);
+      console.info("And I am your manager");
     }
   }
 
@@ -22,6 +23,6 @@ describe("Method Overriding", () => {
     employee.sayHello("Budi"); // Hello Budi, my name is Andi
 
     const manager = new Manager("Rossi");
-    manager.sayHello("Budi"); // Hello Budi, my name is Rossi, I'm your manager
+    manager.sayHello("Budi"); // Hello Budi, my name is Rossi. And I'm your manager
   });
 });
